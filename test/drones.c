@@ -53,9 +53,9 @@ int main(void) {
 
 	dogma_add_drone(ctx, TYPE_GardeII, 1);
 	dogma_get_drone_attribute(ctx, TYPE_GardeII, ATT_MaxRange, &v);
-	assertf(41250.0, v, 0.05);
+	assertf(30938, v, 1);
 	dogma_get_drone_attribute(ctx, TYPE_GardeII, ATT_TrackingSpeed, &v);
-	assertf(0.0495, v, 0.00005);
+	assertf(0.0462, v, 0.00005);
 
 	dogma_add_module(ctx, TYPE_LargeSentryDamageAugmentorI, &slot0);
 	dogma_add_module(ctx, TYPE_DroneDamageAmplifierII, &slot1);
@@ -64,11 +64,11 @@ int main(void) {
 	dogma_set_module_state(ctx, slot1, DOGMA_STATE_Online);
 	dogma_set_module_state(ctx, slot2, DOGMA_STATE_Online);
 	dogma_get_drone_attribute(ctx, TYPE_GardeII, ATT_MaxRange, &v);
-	assertf(41250.0, v, 0.05);
+	assertf(30937.5, v, 0.05);
 	dogma_get_drone_attribute(ctx, TYPE_GardeII, ATT_TrackingSpeed, &v);
-	assertf(0.0495, v, 0.0000005);
+	assertf(0.0462, v, 0.0000005);
 	dogma_get_drone_attribute(ctx, TYPE_GardeII, ATT_DamageMultiplier, &v);
-	assertf(7.03126768158, v, 0.000000000005);
+	assertf(6.685757038689796, v, 0.000000000005);
 
 	dogma_free_context(ctx);
 

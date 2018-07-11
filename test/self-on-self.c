@@ -63,7 +63,7 @@ int main(void) {
 	assert(f == true);
 	dogma_add_squad_commander(fctx, 0, 0, ctx);
 	dogma_get_ship_attribute(ctx, ATT_ScanResolution, &v);
-	assertf(288.75, v, 0.005);
+	assertf(262.5, v, 0.005);
 
 	dogma_set_squad_booster(fctx, 0, 0, NULL);
 
@@ -74,7 +74,7 @@ int main(void) {
 	dogma_add_module_sc(ctx, TYPE_TrackingDisruptorII, &slots[4], DOGMA_STATE_Active, TYPE_OptimalRangeDisruptionScript);
 
 	dogma_get_module_attribute(ctx, slots[0], ATT_MaxRange, &v);
-	assertf(28663.306487, v, 0.0000005);
+	assertf(35829.133108712994726, v, 0.0000005);
 
 	/* Self-projected fit, see if anything blows up! */
 	dogma_target(ctx, (dogma_location_t){ .type = DOGMA_LOC_Module, .module_index = slots[3] }, ctx);
@@ -84,7 +84,7 @@ int main(void) {
 	 * obtained by duplicating the fit then projecting one on the
 	 * other */
 	dogma_get_module_attribute(ctx, slots[0], ATT_MaxRange, &v);
-	assertf(10240.2289768, v, 0.00000005);
+	assertf(35829.133108712994726, v, 0.00000005);
 
 	dogma_free_context(ctx);
 	dogma_free_fleet_context(fctx);

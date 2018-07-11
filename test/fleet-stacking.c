@@ -52,16 +52,16 @@ int main(void) {
 	/* Source: Pyfa-a4d72ca (Oct 7 2013) */
 
 	dogma_get_ship_attribute(ctxA, ATT_ArmorEmDamageResonance, &v);
-	assertf(0.201374351838, v, 0.0000000000005);
+	assertf(0.213903018901540, v, 0.0000000000005);
 	dogma_get_ship_attribute(ctxA, ATT_ArmorExplosiveDamageResonance, &v);
-	assertf(0.186634205333, v, 0.0000000000005);
+	assertf(0.190820907347254, v, 0.0000000000005);
 	dogma_get_ship_attribute(ctxA, ATT_ArmorKineticDamageResonance, &v);
-	assertf(0.174969567500, v, 0.0000000000005);
+	assertf(0.178894600638051, v, 0.0000000000005);
 	dogma_get_ship_attribute(ctxA, ATT_ArmorThermalDamageResonance, &v);
-	assertf(0.261786657389, v, 0.0000000000005);
+	assertf(0.278073924572002, v, 0.0000000000005);
 
 	dogma_get_ship_attribute(ctxA, ATT_ArmorHP, &v);
-	assertf(6875.0, v, 0.05);
+	assertf(6562.5, v, 0.05);
 
 	dogma_free_context(ctxA);
 	dogma_free_context(ctxB);

@@ -43,7 +43,7 @@ int main(void) {
 	assert(able == false);
 
 	assert(dogma_type_has_active_effects(TYPE_DamageControlII, &able) == DOGMA_OK);
-	assert(able == true);
+	assert(able == false);
 	assert(dogma_type_has_overload_effects(TYPE_DamageControlII, &able) == DOGMA_OK);
 	assert(able == false);
 
@@ -93,7 +93,7 @@ int main(void) {
 	) == DOGMA_OK);
 	/* Source: Pyfa-1.10.0 */
 	assertf(1440.0, duration, 0.05);
-	assertf(0.5475, tracking, 0.00005);
+	assertf(547.5, tracking, 0.05);
 	assertf(0.374262, discharge, 0.0000005);
 	assertf(range, 1800.0, 0.05);
 	assertf(falloff, 1875.0, 0.05);

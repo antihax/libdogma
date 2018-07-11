@@ -17,7 +17,6 @@
  */
 
 #include "test.h"
-#include <stdio.h>
 
 /* Osmium 0.6.4 (Retribution 1.1) */
 #define HARB_BaseCPU 375.00

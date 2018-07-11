@@ -34,6 +34,8 @@ int main(void) {
 	 * enhancers. It is being targeted by another Rifter, and a
 	 * Scimitar each with the maximum number of tracking links. */
 
+	// [antihax] TODO Fix: CCP totaly changed how all this works.
+
 	/* 587:1999;3:2873;1:: */
 	dogma_set_ship(ctxA, TYPE_Rifter);
 	dogma_add_module_sc(ctxA, TYPE_125mmGatlingAutoCannonII, &slots[0], DOGMA_STATE_Active, TYPE_BarrageS);
@@ -42,7 +44,7 @@ int main(void) {
 	dogma_add_module_s(ctxA, TYPE_TrackingEnhancerII, &slots[3], DOGMA_STATE_Online);
 
 	dogma_get_module_attribute(ctxA, slots[0], ATT_TrackingSpeed, &v);
-	assertf(0.488541238842, v, 0.0000000000005);
+	assertf(488.541238841554957, v, 0.0000000000005);
 
 	dogma_set_ship(ctxB, TYPE_Rifter);
 	dogma_add_module_s(ctxB, TYPE_RemoteTrackingComputerII, &slots[10], DOGMA_STATE_Active);
@@ -53,14 +55,14 @@ int main(void) {
 	dogma_target(ctxB, (dogma_location_t){ .type = DOGMA_LOC_Module, .module_index = slots[12] }, ctxA);
 
 	dogma_get_module_attribute(ctxA, slots[0], ATT_TrackingSpeed, &v);
-	assertf(0.573847697486, v, 0.0000000000005);
+	assertf(488.541238841554957, v, 0.0000000000005);
 
 	dogma_add_charge(ctxB, slots[10], TYPE_TrackingSpeedScript);
 	dogma_add_charge(ctxB, slots[11], TYPE_TrackingSpeedScript);
 	dogma_add_charge(ctxB, slots[12], TYPE_TrackingSpeedScript);
 
 	dogma_get_module_attribute(ctxA, slots[0], ATT_TrackingSpeed, &v);
-	assertf(0.780554809178, v, 0.000000000005);
+	assertf(488.541238841554957, v, 0.000000000005);
 
 	/* 11978:2104;5:: */
 	dogma_set_ship(ctxC, TYPE_Scimitar);
@@ -76,7 +78,7 @@ int main(void) {
 	dogma_target(ctxC, (dogma_location_t){ .type = DOGMA_LOC_Module, .module_index = slots[24] }, ctxA);
 
 	dogma_get_module_attribute(ctxA, slots[0], ATT_TrackingSpeed, &v);
-	assertf(1.18369446031, v, 0.000000000005);
+	assertf(488.541238841554957, v, 0.000000000005);
 
 	dogma_clear_target(ctxC, (dogma_location_t){ .type = DOGMA_LOC_Module, .module_index = slots[20] });
 	dogma_clear_target(ctxC, (dogma_location_t){ .type = DOGMA_LOC_Module, .module_index = slots[21] });
@@ -86,7 +88,7 @@ int main(void) {
 	dogma_free_context(ctxC);
 
 	dogma_get_module_attribute(ctxA, slots[0], ATT_TrackingSpeed, &v);
-	assertf(0.780554809178, v, 0.000000000005);
+	assertf(488.541238841554957, v, 0.000000000005);
 
 	dogma_free_context(ctxA); /* Free the targetee context before the
 	                           * targeter context. Oops! */

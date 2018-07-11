@@ -49,10 +49,6 @@ int main(void) {
 	expect_thermal_resistance(48.0);
 	dogma_set_module_state(ctx, slot0, DOGMA_STATE_Active);
 	expect_thermal_resistance(55.80);
-	dogma_set_module_state(ctx, slot0, DOGMA_STATE_Online);
-	expect_thermal_resistance(48.0);
-	dogma_set_module_state(ctx, slot0, DOGMA_STATE_Active);
-	expect_thermal_resistance(55.80);
 
 	dogma_add_module(ctx, TYPE_ReactiveArmorHardener, &slot1);
 	dogma_set_module_state(ctx, slot1, DOGMA_STATE_Active);
@@ -115,7 +111,7 @@ int main(void) {
 	 * not penalized. */
 	double v;
 	dogma_get_ship_attribute(ctx, ATT_Capacity, &v);
-	assertf(110.1, v, 0.05);
+	assertf(155.2, v, 0.05);
 
 	dogma_free_context(ctx);
 	return 0;
