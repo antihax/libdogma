@@ -31,3 +31,4 @@ libdogma.pc
 core.*
 libdogmactl
 test/bruteforce-data.h
+*.json
