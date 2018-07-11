@@ -785,7 +785,10 @@ foreach($json['effects'] as &$effect) {
 
         /* XXX: this is guesswork */
         switch($modifier['operator']) {
-
+		case -1:
+	        /* XXX: this is also guesswork */
+            $assocstring = 'PreMul';
+            break;
         case 0:
 	        /* XXX: this is REALLY guesswork */
             $assocstring = 'PreMul';
