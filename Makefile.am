@@ -11,7 +11,7 @@ libdogma_la_SOURCES=src/core/dogma.c include/dogma.h			\
 	src/core/attribute.c src/core/attribute.h src/core/fleet.c	\
 	src/core/fleet.h src/extra/extra.c src/extra/capacitor.c	\
 	src/libdogma.sym src/operands.h src/tables-data.h test/test.h	\
-	tools/bootstrap_from_json
+	tools/bootstrap_from_json src/core/type.c
 
 libdogma_la_LDFLAGS=-export-symbols src/libdogma.sym -version-info 2:0:2
 include_HEADERS=include/dogma.h include/dogma-names.h	\

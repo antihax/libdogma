@@ -1,3 +1,8 @@
+Version 1.2.1, released 2018-07-13
+==================================
+
+* Added dogma_get_category_from_typeid().
+
 Version 1.2.0, released 2015-08-25
 ==================================
 

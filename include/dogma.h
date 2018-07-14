@@ -376,6 +376,9 @@ int dogma_get_chance_based_effect_chance(dogma_context_t*, dogma_location_t, dog
 
 
 
+/* Return the category ID for the typeID */
+uint8_t dogma_get_category_for_typeid(dogma_typeid_t);
+
 
 
 #endif
